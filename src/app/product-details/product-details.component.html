@@ -1,0 +1,62 @@
+<section class="product">
+  <div class="product__container">
+    <div class="slider">
+      <div class="slider__arrow__left slider__arrow"></div>
+      <div class="slider__photos">
+        <img class="slider__image big" src="{{product.image}}" alt="{{product.name}}">
+        <!-- <img class="slider__image " src="images/product-image-2.png" alt="Продукт">
+        <img class="slider__image " src="images/product-image-3.png" alt="Продукт">
+        <img class="slider__image " src="images/product-image-4.png" alt="Продукт">
+        <img class="slider__image " src="images/product-image-5.png" alt="Продукт"> -->
+      </div>
+      <div class="slider__arrow__right slider__arrow"></div>
+    </div>
+    <div class="info">
+      <h1 class="info__title">{{product.category}}</h1>
+      <p class="info__descr">
+        {{product.name}}
+      </p>
+      <div class="info__color">
+        <p>Color</p>
+        <span *ngFor="let color of product.color;">
+        <input type="radio" name="color" value="{{color}}" id="{{color}}">
+        <label for="{{color}}"></label>
+        </span>
+      </div>
+      <div class="info__size">
+        <p>Size</p>
+        <input type="radio" name="size" value="xs" id="xs">
+        <label for="xs">XS</label>
+        <input type="radio" name="size" value="s" id="s">
+        <label for="s">S</label>
+        <input type="radio" name="size" value="m" id="m">
+        <label for="m">M</label>
+        <input type="radio" name="size" value="l" id="l">
+        <label for="l">L</label>
+        <input type="radio" name="size" value="xl" id="xl">
+        <label for="xl">XL</label>
+      </div>
+      <div class="info__price">&#36; 160</div>
+      <a class="info__button" href="#">
+        Add to cart
+      </a>
+    </div>
+  </div>
+</section>
+<section class="others">
+  <div class="container">
+    <div class="others__text">
+      <div class="others__title">You may also like</div>
+      <div class="others__view-all">
+        <a [routerLink]="['/products', product.sex]">View all</a>
+      </div>
+    </div>
+    <div class="goods">
+      <a *ngFor="let product of alsoLikeProducts" [routerLink]="['/products/productdetails', product.id]" class="goods__item" >
+        <img class="goods__image" src="{{product.image}}" alt="{{product.name}}">
+        <div class="goods__name">{{product.category}}</div>
+        <div class="goods__price">&#36; {{product.price}}</div>
+      </a>
+    </div>
+  </div>
+</section>

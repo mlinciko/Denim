@@ -47,4 +47,9 @@ export class ProductService {
     }
     return diffCategories;
   }
+
+  //возвращает все товары по полю sex 
+  getProductsBySex(sex:string){  
+    return PRODUCTS.filter((product) => product.sex === sex);
+  }
 }

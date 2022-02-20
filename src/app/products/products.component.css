@@ -1,0 +1,265 @@
+.top{
+  margin-top:74px;
+}
+.top .container{
+  display:flex;
+  background-color: #F1F2F4;
+}
+.top__title{
+  max-width: 700px;
+  font:700 32px/40px 'Work Sans',sans-serif;
+  padding:107px 129px 73px 298px;
+}
+.top img{
+  width: 299px;
+  height: 260px;
+}
+.top__image{
+  position:relative;
+  z-index:1;
+}
+.top__image::before, .top__image::after{
+  position: absolute;
+  content:'';
+  background: url("../../assets/images/main/lines.svg") no-repeat;
+  background-size: cover;
+  z-index:-1;
+}
+.top__image::before{
+  width: 232px;
+  height: 176px;
+  top:0;
+  right:-58px;
+  transform:rotate(90deg);
+}
+.top__image::after{
+  width: 178px;
+  height: 135px;
+  bottom:0;
+  left:-30px;
+}
+
+.filter{
+  margin-top:40px;
+}
+.filter .container{
+  position:relative;
+  margin-top:40px;
+}
+.filter__main{
+  position:absolute;
+  top:0;
+  right:0;
+  z-index:2;
+}
+.filter__title{
+  font:500 18px/50px 'Work Sans', sans-serif;
+  cursor:pointer;
+  padding-left:18px;
+}
+.main__title{
+  width: 243px;
+  height: 50px;
+  border:2px solid #151c22;
+}
+.settings{
+  background-color: #fff;
+  border:2px solid #151c22;
+  border-top:none;
+}
+.filter__apply{
+  background-color: #151c22;
+  color:#fff;
+  cursor:auto;
+  margin-top:49px;
+}
+.filter__clear{
+  background-color: #fff;
+  color:#151c22;
+}
+.filter__price, .filter__color, .filter__collec{
+  border-bottom:2px solid #f1f2f4;
+}
+.arrow__main::before, .arrow__price::before, .arrow__color::before, .arrow__collec::before{
+  position:absolute;
+  right:17px;
+  content:'\f078';
+  font-family: 'Font Awesome 5 Free', 'Font Awesome 5 Brands';
+  font-weight: 900;
+  cursor:pointer;
+}
+.arrow__main, .arrow__price, .arrow__color,.arrow__collec{
+  position:relative;
+}
+/* Убираем стандартный маркер */
+details summary::-webkit-details-marker {
+  display: none
+}
+details > summary {
+  list-style: none;
+}
+details[open].filter__main  .arrow__main::before, details[open].filter__color .arrow__color::before, details[open].filter__collec .arrow__collec::before, details[open].filter__price .arrow__price::before{
+  transform:rotate(180deg);
+}
+
+.filter__apply, .filter__clear{
+  width: 100%;
+  text-align: center;
+  padding:0;
+}
+
+
+/*PRICE*/
+.filter__price label{
+  display:block;
+  font:500 14px/16px 'Work Sans', sans-serif;
+  color:#151c22;
+  padding:0 0 10px 18px;
+}
+.filter__price input[type="range"]{
+  width: 207px;
+  margin:0 0 23px 17px;
+}
+/*скрываем оригинальные стили ползунка*/
+.filter__price input[type=range]  {
+    width: 200px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+/*добавляем свои стили для ползунка*/
+input[type=range]::-webkit-slider-runnable-track {
+  height: 2px;
+  background-color: #F1F2F4;
+}
+input[type=range]::-webkit-slider-thumb {
+  background: #151c22;
+  border-radius: 50%;
+  cursor: pointer;
+  width:15px;
+  height: 15px;
+  -webkit-appearance: none;
+  margin-top:-6px;
+}
+input[type=range]::-moz-range-track {
+  height: 2px;
+  background-color: #F1F2F4;
+}
+input[type=range]::-moz-range-thumb {
+  background: #151c22;
+  border-radius: 50%;
+  cursor: pointer;
+  width:15px;
+  height: 15px;
+  margin-top:-6px;
+}
+
+/*скрывает оригинальные маркеры*/
+input[type=radio]{
+  visibility: hidden;
+  position: absolute;
+}
+/*COLOR*/
+/*добавляет свои маркеры*/
+.filter__color input[type=radio] + label:after{
+  display:inline-block;
+  height:16px;
+  width:16px;
+  content: " ";
+  cursor:pointer;
+  vertical-align: baseline;
+  border-radius:50%;
+  margin-bottom:25px;
+}
+.filter__color input[type=radio] + label::after{
+  margin-left:20px;
+}
+.filter__color input[type=radio] + label:nth-of-type(1):after{
+  background-color: #b1c4c8;
+}
+.filter__color input[type=radio] + label:nth-of-type(2):after{
+  background-color: #3b6392;
+}
+.filter__color input[type=radio] + label:nth-of-type(3):after{
+  background-color: #bfc3c8;
+}
+.filter__color input[type=radio] + label:nth-of-type(4):after{
+  background-color: #292a2a;
+}
+.filter__color input[type=radio] + label:nth-of-type(5):after{
+  background-color: #ededed;
+}
+.filter__color input[type=radio] + label:nth-of-type(6):after{
+  background-color: #3f94db;
+}
+/*меняет стиль при выборе элемента */
+.filter__color input[type=radio]:checked + label:nth-of-type(1):after{
+  outline: 1px solid #b1c4c8;
+  outline-offset: 3px; 
+}
+.filter__color input[type=radio]:checked + label:nth-of-type(2):after{
+  outline: 1px solid #3b6392; 
+  outline-offset: 3px; 
+}
+.filter__color input[type=radio]:checked + label:nth-of-type(3):after{
+  outline: 1px solid #bfc3c8; 
+  outline-offset: 3px; 
+}
+.filter__color input[type=radio]:checked + label:nth-of-type(4):after{
+  outline: 1px solid #292a2a;
+  outline-offset: 3px; 
+}
+.filter__color input[type=radio]:checked + label:nth-of-type(5):after{
+  outline: 1px solid #ededed;
+  outline-offset: 3px; 
+}
+.filter__color input[type=radio]:checked + label:nth-of-type(6):after{
+  outline: 1px solid #3f94db; 
+  outline-offset: 3px; 
+}
+
+/*COLLECTION*/
+.filter__collec input[type=radio]{
+  color:#727A82;
+} 
+.filter__collec label{
+  display:inline-block;
+  font:500 14px/16px 'Work Sans', sans-serif;
+  cursor:pointer;
+  color:#727A82;
+  margin: 10px 18px;
+}
+.filter__collec input[type=radio]:checked + label{
+  font-weight: 600;
+  color:#151C22;
+}
+
+/*GOODS*/
+.goods{
+  margin-top:130px;
+  margin-bottom:100px;
+}
+.goods .container{
+  display:grid;
+  grid-template:288px 288px 288px 288px/243px 243px 243px 243px;
+  gap:66px;
+}
+.goods__item{
+  cursor:pointer;
+  color:#000;
+}
+.goods__item:hover{
+  opacity:0.6;
+}
+.goods__item img{
+  width: 243px;
+  height: 270px;
+  object-fit:cover;
+}
+.goods__name{
+  font:500 18px/21px 'Work Sans', sans-serif;
+  padding:15px 0 5px 0;
+}
+.goods__price{
+  font:700 16px/18px 'Work Sans',sans-serif;
+}

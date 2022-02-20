@@ -15,8 +15,11 @@ header{
   font: 500 16px/18.8px 'Work Sans', sans-serif;
   padding-top:26px;
 }
-.header__menu li:nth-child(2), .header__menu li:nth-child(3){
+.header__menu li:nth-child(2), .header__menu li:nth-child(3), .header__menu li:nth-child(4){
   margin-left:35px;
+}
+.menu__item{
+  cursor:pointer;
 }
 .menu a{
   color:#151C22;
