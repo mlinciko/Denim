@@ -1,0 +1,51 @@
+<section class="main">
+  <div class="container main__container">
+    <div class="main__items">
+      <div class="main__subtitle">The quality you deserve</div>
+      <div class="main__title">DENIM</div>
+      <a href="#" class="main__button">Check new collection</a>
+    </div>
+    <div class="main__image">
+      <img src="/assets/images/main/main.jpg" alt="Main photo" class="main__image">
+    </div>
+    <div class="main__contacts contacts">
+      <div class="contacts__item">Facebook</div>
+      <div class="contacts__item">Instagram</div>
+    </div>
+  </div>
+</section>
+<section class="best">
+  <div class="container">
+    <div class="best__title">Bestsellers</div>
+    <div class="goods">
+      <a *ngFor="let product of bestSellers" class="goods__item">
+        <img src={{product.image}} alt={{product.name}}>
+        <div class="goods__title">{{product.category}}</div>
+        <div class="goods__price">{{product.price}}$</div>
+      </a>
+    </div>
+  </div>
+</section>
+<section class="fall">
+  <div class="container">
+    <img src="assets/images/main/01.jpg" alt="Fall 2019">
+    <div class="info">
+      <div class="info__subtitle">Street fashion collection</div>
+      <div class="info__title">Fall 2019</div>
+      <a class="info__button">Shop now</a>
+    </div>
+  </div>
+</section>
+
+<section class="category">
+  <div class="container">
+    <div class="category__title">Shop by category</div>
+    <div class="goods">
+      <a *ngFor="let product of productCategories" class="goods__item">
+        <img src="{{product.image}}" alt="{{product.name}}">
+        <div class="goods__name">{{product.category}}</div>
+      </a>
+    </div>
+  </div>
+</section>
+
