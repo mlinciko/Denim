@@ -1,15 +1,17 @@
 <section class="product">
   <div class="product__container">
     <div class="slider">
-      <div class="slider__arrow__left slider__arrow"></div>
       <div class="slider__photos">
-        <img class="slider__image big" src="{{product.image}}" alt="{{product.name}}">
-        <!-- <img class="slider__image " src="images/product-image-2.png" alt="Продукт">
-        <img class="slider__image " src="images/product-image-3.png" alt="Продукт">
-        <img class="slider__image " src="images/product-image-4.png" alt="Продукт">
-        <img class="slider__image " src="images/product-image-5.png" alt="Продукт"> -->
+        <img 
+          *ngFor="let image of product.images; index as i" 
+          class="slider__image"
+          [class.big]="i==0"
+          (click)="changeSize(selectedImg)"  
+          src="{{image}}" 
+          alt="{{product.name}}" 
+          #selectedImg
+        >
       </div>
-      <div class="slider__arrow__right slider__arrow"></div>
     </div>
     <div class="info">
       <h1 class="info__title">{{product.category}}</h1>
@@ -53,10 +55,11 @@
     </div>
     <div class="goods">
       <a *ngFor="let product of alsoLikeProducts" [routerLink]="['/products/productdetails', product.id]" class="goods__item" >
-        <img class="goods__image" src="{{product.image}}" alt="{{product.name}}">
+        <img class="goods__image" src="{{product.images[0]}}" alt="{{product.name}}">
         <div class="goods__name">{{product.category}}</div>
         <div class="goods__price">&#36; {{product.price}}</div>
       </a>
     </div>
   </div>
 </section>
+<script src="./script.js"></script>

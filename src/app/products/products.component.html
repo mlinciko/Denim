@@ -59,11 +59,10 @@
   <div class="container">
     <a *ngFor="let product of products; index as i" [routerLink]="['/products/productdetails', product.id]"
       class="goods__item">
-      <img src="{{product.image}}" alt="{{product.name}}">
+      <img src="{{product.images[0]}}" alt="{{product.name}}">
       <div class="goods__name">{{product.category}}</div>
       <div class="goods__price">{{product.price}}$</div>
     </a>
   </div>
 </section>
-<!-- [routerLink]="['/woman/productdetails', product.id]" -->
 

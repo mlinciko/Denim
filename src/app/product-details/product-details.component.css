@@ -43,28 +43,19 @@
   height: 113px;
   object-fit:cover;
   cursor:pointer;
-}
-
-.slider__image:nth-child(1){
   order:1;
 }
-.slider__image:nth-child(2){
-  order:2;
-}
-.slider__image:nth-child(3){
-  order:3;
-}
-.slider__image:nth-child(4){
-  order:4;
-}
-.slider__image:nth-child(5){
-  order:5;
-}
+
 .slider__image.big{
   width: 400px;
   height: 523px;
-  order:0 !important;
+  order:0;
 }
+
+.slider__image:hover{
+  box-shadow:0px 1px 10px #3f94db;
+}
+
 
 
 
@@ -105,7 +96,7 @@ input[type=radio]{
   margin:24px 0 0 3px;
 }
 .info__color input[type=radio] + label[for="light-gray"]:after{
-  background-color: #ededed;
+  background-color: #b3b3b4;
   margin-right:23px;
 }
 .info__color input[type=radio] + label[for="blue"]:after{
@@ -113,7 +104,7 @@ input[type=radio]{
   margin-right:23px;
 }
 .info__color input[type=radio] + label[for="gray"]:after{
-  background-color: #bfc3c8;
+  background-color: #7f7f7f;
   margin-right:23px;
 }
 .info__color input[type=radio] + label[for="light-blue"]:after{
@@ -130,7 +121,7 @@ input[type=radio]{
 }
 /*меняет стиль при выборе элемента */
 .info__color input[type=radio]:checked + label[for="light-gray"]:after{
-  outline: 1px solid #ededed; 
+  outline: 1px solid #b3b3b4;
   outline-offset: 3px; 
 }
 .info__color input[type=radio]:checked + label[for="blue"]:after{
@@ -138,7 +129,7 @@ input[type=radio]{
   outline-offset: 3px; 
 }
 .info__color input[type=radio]:checked + label[for="gray"]:after{
-  outline: 1px solid #bfc3c8; 
+  outline: 1px solid #7f7f7f;
   outline-offset: 3px; 
 }
 .info__color input[type=radio]:checked + label[for="light-blue"]:after{

@@ -51,7 +51,7 @@ export class ProductsComponent implements OnInit {
     private route: ActivatedRoute,
     private location: Location) { 
 
-    //меняет массив товаро для нужного пола в соответствии с ссылкой в строке браузера
+    //меняет массив товаров для нужного поля в соответствии с ссылкой в строке браузера
     this.location.onUrlChange((url) => {      
       this.products = this.productService.getProductsBySex(url.substr(10));
     })

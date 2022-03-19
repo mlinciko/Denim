@@ -19,7 +19,7 @@
     <div class="best__title">Bestsellers</div>
     <div class="goods">
       <a *ngFor="let product of bestSellers" [routerLink]="['/products/productdetails', product.id]" class="goods__item">
-        <img src={{product.image}} alt={{product.name}}>
+        <img src={{product.images[0]}} alt={{product.name}}>
         <div class="goods__title">{{product.category}}</div>
         <div class="goods__price">{{product.price}}$</div>
       </a>
@@ -42,7 +42,7 @@
     <div class="category__title">Shop by category</div>
     <div class="goods">
       <a *ngFor="let product of productCategories" [routerLink]="['/products/productdetails', product.id]" class="goods__item">
-        <img src="{{product.image}}" alt="{{product.name}}">
+        <img src="{{product.images[0]}}" alt="{{product.name}}">
         <div class="goods__name">{{product.category}}</div>
       </a>
     </div>
