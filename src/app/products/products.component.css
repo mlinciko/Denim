@@ -41,6 +41,7 @@
 
 .filter{
   margin-top:40px;
+  margin-bottom:130px;
 }
 .filter .container{
   position:relative;
@@ -57,6 +58,9 @@
   cursor:pointer;
   padding-left:18px;
 }
+.filter__title button{
+  font:500 18px/50px 'Work Sans',sans-serif;
+}
 .main__title{
   width: 243px;
   height: 50px;
@@ -72,6 +76,10 @@
   color:#fff;
   cursor:auto;
   margin-top:49px;
+}
+.filter__apply button{
+  background-color: #151c22;
+  color:#fff;
 }
 .filter__clear{
   background-color: #fff;
@@ -155,13 +163,17 @@ input[type=range]::-moz-range-thumb {
 }
 
 /*скрывает оригинальные маркеры*/
-input[type=radio]{
+input[type=radio] {
+  visibility: hidden;
+  position: absolute;
+}
+input[type=checkbox]{
   visibility: hidden;
   position: absolute;
 }
 /*COLOR*/
 /*добавляет свои маркеры*/
-.filter__color input[type=radio] + label:after{
+.filter__color input[type=checkbox] + label:after{
   display:inline-block;
   height:16px;
   width:16px;
@@ -171,55 +183,55 @@ input[type=radio]{
   border-radius:50%;
   margin-bottom:25px;
 }
-.filter__color input[type=radio] + label::after{
+.filter__color input[type=checkbox] + label::after{
   margin-left:20px;
 }
-.filter__color input[type=radio] + label:nth-of-type(1):after{
+.filter__color input[type=checkbox] + label:nth-of-type(1):after{
   background-color: #b1c4c8;
 }
-.filter__color input[type=radio] + label:nth-of-type(2):after{
+.filter__color input[type=checkbox] + label:nth-of-type(2):after{
   background-color: #3b6392;
 }
-.filter__color input[type=radio] + label:nth-of-type(3):after{
+.filter__color input[type=checkbox] + label:nth-of-type(3):after{
   background-color: #bfc3c8;
 }
-.filter__color input[type=radio] + label:nth-of-type(4):after{
+.filter__color input[type=checkbox] + label:nth-of-type(4):after{
   background-color: #292a2a;
 }
-.filter__color input[type=radio] + label:nth-of-type(5):after{
+.filter__color input[type=checkbox] + label:nth-of-type(5):after{
   background-color: #ededed;
 }
-.filter__color input[type=radio] + label:nth-of-type(6):after{
+.filter__color input[type=checkbox] + label:nth-of-type(6):after{
   background-color: #3f94db;
 }
 /*меняет стиль при выборе элемента */
-.filter__color input[type=radio]:checked + label:nth-of-type(1):after{
+.filter__color input[type=checkbox]:checked + label:nth-of-type(1):after{
   outline: 1px solid #b1c4c8;
   outline-offset: 3px; 
 }
-.filter__color input[type=radio]:checked + label:nth-of-type(2):after{
+.filter__color input[type=checkbox]:checked + label:nth-of-type(2):after{
   outline: 1px solid #3b6392; 
   outline-offset: 3px; 
 }
-.filter__color input[type=radio]:checked + label:nth-of-type(3):after{
+.filter__color input[type=checkbox]:checked + label:nth-of-type(3):after{
   outline: 1px solid #bfc3c8; 
   outline-offset: 3px; 
 }
-.filter__color input[type=radio]:checked + label:nth-of-type(4):after{
+.filter__color input[type=checkbox]:checked + label:nth-of-type(4):after{
   outline: 1px solid #292a2a;
   outline-offset: 3px; 
 }
-.filter__color input[type=radio]:checked + label:nth-of-type(5):after{
+.filter__color input[type=checkbox]:checked + label:nth-of-type(5):after{
   outline: 1px solid #ededed;
   outline-offset: 3px; 
 }
-.filter__color input[type=radio]:checked + label:nth-of-type(6):after{
+.filter__color input[type=checkbox]:checked + label:nth-of-type(6):after{
   outline: 1px solid #3f94db; 
   outline-offset: 3px; 
 }
 
 /*COLLECTION*/
-.filter__collec input[type=radio]{
+.filter__collec input[type=checkbox]{
   color:#727A82;
 } 
 .filter__collec label{
@@ -229,37 +241,12 @@ input[type=radio]{
   color:#727A82;
   margin: 10px 18px;
 }
-.filter__collec input[type=radio]:checked + label{
+.filter__collec input[type=checkbox]:checked + label{
   font-weight: 600;
   color:#151C22;
 }
-
-/*GOODS*/
-.goods{
-  margin-top:130px;
-  margin-bottom:100px;
-}
-.goods .container{
-  display:grid;
-  grid-template:288px 288px 288px 288px/243px 243px 243px 243px;
-  gap:66px;
-}
-.goods__item{
-  cursor:pointer;
-  color:#000;
-}
-.goods__item:hover{
-  opacity:0.6;
-}
-.goods__item img{
-  width: 243px;
-  height: 270px;
-  object-fit:cover;
-}
-.goods__name{
-  font:500 18px/21px 'Work Sans', sans-serif;
-  padding:15px 0 5px 0;
-}
-.goods__price{
-  font:700 16px/18px 'Work Sans',sans-serif;
+.products-is-empty{
+  text-align: center;
+  font-size: 20px;
+  font-weight: 500;
 }

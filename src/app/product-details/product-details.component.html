@@ -3,7 +3,7 @@
     <div class="slider">
       <div class="slider__photos">
         <img 
-          *ngFor="let image of product.images; index as i" 
+          *ngFor="let image of product.image; index as i" 
           class="slider__image"
           [class.big]="i==0"
           (click)="changeSize(selectedImg)"  
@@ -53,13 +53,7 @@
         <a [routerLink]="['/products', product.sex]">View all</a>
       </div>
     </div>
-    <div class="goods">
-      <a *ngFor="let product of alsoLikeProducts" [routerLink]="['/products/productdetails', product.id]" class="goods__item" >
-        <img class="goods__image" src="{{product.images[0]}}" alt="{{product.name}}">
-        <div class="goods__name">{{product.category}}</div>
-        <div class="goods__price">&#36; {{product.price}}</div>
-      </a>
-    </div>
   </div>
 </section>
+<app-product-template [products]="alsoLikeProducts" [widthImg]="270" [heightImg]="343" [gap30]="true"></app-product-template>
 <script src="./script.js"></script>

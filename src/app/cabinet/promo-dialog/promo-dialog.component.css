@@ -1,0 +1,48 @@
+.promo .title{
+  font-size: 20px;
+  margin:10px 0 20px 0;
+}
+.promo__item{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  box-shadow: 0 0 10px -1px rgb(221 221 221);
+  padding-right:10px;
+  margin-bottom:20px;
+}
+.promo__container{
+  padding:10px;
+}
+.promo__name{
+  font-weight: 500;
+}
+.promo__description{
+  font-size: 12px;
+}
+.promo__btn{
+  display:block;
+  height:35px;
+  width: 90px;
+  background-color: #151C22;
+  color:#fff;
+  border-radius:3px;
+}
+.promo__btn:hover{
+  background-color: #88bdd1;
+  cursor: pointer;
+}
+
+.close__button {
+  position: relative;
+  display: block;
+}
+
+.close__button::before {
+  position: absolute;
+  right: -13px;
+  top: -25px;
+  content: '\f00d';
+  font-family: 'Font Awesome 5 Free', 'Font Awesome 5 Brands';
+  font-weight: 900;
+  cursor: pointer;
+}

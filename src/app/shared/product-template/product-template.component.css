@@ -1,0 +1,28 @@
+.goods{
+  margin-bottom:100px;
+  min-height:400px;
+}
+.goods .container{
+  display:flex;
+  flex-wrap:wrap;
+}
+.gap30{
+  gap:30px;
+}
+.gap66{
+  gap:66px;
+}
+.goods__item{
+  cursor:pointer;
+  color:#000;
+}
+.goods__item img{
+  object-fit:cover;
+}
+.goods__name{
+  font:500 14px/21px 'Work Sans', sans-serif;
+  padding:15px 0 5px 0;
+}
+.goods__price{
+  font:700 16px/18px 'Work Sans',sans-serif;
+}

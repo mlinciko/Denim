@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from '../shared/product';
+import { Product } from '../shared/model/product';
 //import { PRODUCTS } from '../shared/products';
 import { ProductService } from '../services/product.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-home',
@@ -9,17 +10,29 @@ import { ProductService } from '../services/product.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
-  products: Product[] = [];
   bestSellers: Product[] = [];
   productCategories: Product[] = [];
 
   constructor(private productService : ProductService) { }
 
   ngOnInit(): void {
-    this.products = this.productService.getProducts();
-    this.bestSellers = this.productService.getBestsellers();
-    this.productCategories = this.productService.getDiffCategories();
+    
+    this.productService.getBestsellers(4).subscribe(
+      (res) => {
+        this.bestSellers = res
+      },
+      (err: HttpErrorResponse) => {
+        console.log(err);
+      }
+    )
+    this.productService.getDiffCategories().subscribe(
+      (res) => {
+        this.productCategories = res;
+      },
+      (err: HttpErrorResponse) => {
+        console.log(err);
+      }
+    )
   }
 
 }

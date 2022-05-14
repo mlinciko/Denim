@@ -46,3 +46,6 @@ h1, h2, h3, h4, h5, h6{font-size:inherit; font-weight: 400;}
 body{
   color:#151C22;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: 'Work Sans', sans-serif; }

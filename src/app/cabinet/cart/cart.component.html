@@ -1,0 +1,63 @@
+<section class="cart">
+  <div class="container">
+    <div class="cart__title">Cart</div>
+
+    <div *ngIf="cartIsEmpty" class="cart__empty">Сart is empty...</div>
+
+    <div class="goods">
+      <div class="goods__container" >
+        <img src="/assets/images/woman/overalls-01.jpg" class="goods__image">
+        <div class="goods__text">
+          <div class="goods__name" >Jacket</div>
+          <div class="goods__price" >&#36; 200</div>
+        </div>
+        <a  class="goods__delete"></a>
+      </div>
+      <div class="goods__container">
+        <img src="/assets/images/woman/overalls-01.jpg" class="goods__image">
+        <div class="goods__text">
+          <div class="goods__name">Jacket</div>
+          <div class="goods__price">&#36; 200</div>
+        </div>
+        <a class="goods__delete"></a>
+      </div>
+      <div class="goods__container">
+        <img src="/assets/images/woman/overalls-01.jpg" class="goods__image">
+        <div class="goods__text">
+          <div class="goods__name">Jacket</div>
+          <div class="goods__price">&#36; 200</div>
+        </div>
+        <a class="goods__delete"></a>
+      </div>
+      
+    </div>
+
+    <div class="cart__summ" ></div>
+    <button (click)="onCheckoutClick()" class="cart__checkout" >Checkout</button>
+  </div>
+</section>
+
+<!-- <section id="dialog" class="modal">
+  <form>
+    <div class="modal__backdrop">
+      <div class="modal__content">
+        <div class="modal__header">
+          <div class="modal__title">Введите свои данные</div>
+          <span class="modal__btn-close" title="Закрыть">×</span>
+        </div>
+        <div class="modal__body">
+          <input th:field="*{firstName}" id="first-name" placeholder="Имя" type="text" name="first-name" requared>
+          <input th:field="*{lastName}" id="last-name" placeholder="Фамилия" type="text" name="last-name" requared>
+          <input th:field="*{tel}" id="tel" placeholder="Номер телефона" type="text" name="tel" requared>
+          <input th:field="*{email}" id="email" placeholder="E-mail" type="text" name="email" requared>
+          <input th:field="*{address}" id="address" Placeholder="Адрес" type="text" name="address" requared>
+          <div class="alert"></div>
+        </div>
+        <div class="modal__footer">
+          <button type="submit">Заказать</button>
+          <div class="modal__cancel">Отменить</div>
+        </div>
+      </div>
+    </div>
+  </form>
+</section> -->

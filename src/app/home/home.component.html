@@ -3,7 +3,7 @@
     <div class="main__items">
       <div class="main__subtitle">The quality you deserve</div>
       <div class="main__title">DENIM</div>
-      <a href="#" class="main__button">Check new collection</a>
+      <a routerLink="/new" class="main__button">Check new collection</a>
     </div>
     <div class="main__image">
       <img src="/assets/images/main/main.jpg" alt="Main photo" class="main__image">
@@ -17,22 +17,17 @@
 <section class="best">
   <div class="container">
     <div class="best__title">Bestsellers</div>
-    <div class="goods">
-      <a *ngFor="let product of bestSellers" [routerLink]="['/products/productdetails', product.id]" class="goods__item">
-        <img src={{product.images[0]}} alt={{product.name}}>
-        <div class="goods__title">{{product.category}}</div>
-        <div class="goods__price">{{product.price}}$</div>
-      </a>
-    </div>
   </div>
 </section>
+<app-product-template [products]="bestSellers" [widthImg]="270" [heightImg]="343" [gap30]="true">
+</app-product-template>
 <section class="fall">
   <div class="container">
     <img src="assets/images/main/01.jpg" alt="Fall 2019">
     <div class="info">
       <div class="info__subtitle">Street fashion collection</div>
-      <div class="info__title">Fall 2019</div>
-      <a class="info__button">Shop now</a>
+      <div class="info__title">Fall 2022</div>
+      <a routerLink="/new" class="info__button">Shop now</a>
     </div>
   </div>
 </section>
@@ -42,7 +37,13 @@
     <div class="category__title">Shop by category</div>
     <div class="goods">
       <a *ngFor="let product of productCategories" [routerLink]="['/products/productdetails', product.id]" class="goods__item">
-        <img src="{{product.images[0]}}" alt="{{product.name}}">
+        <img 
+          src="{{product.image[0]}}" 
+          alt="{{product.name}}"
+          (mouseenter)="hoveredImg.src = product.image[1]" 
+          (mouseleave)="hoveredImg.src = product.image[0]"
+          #hoveredImg
+        >
         <div class="goods__name">{{product.category}}</div>
       </a>
     </div>

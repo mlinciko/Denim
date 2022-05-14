@@ -1,68 +1,60 @@
 <section class="top">
   <div class="container">
-    <div class="top__title">Denim Collection Fall 2019</div>
+    <div class="top__title">Denim Collection Fall 2022</div>
     <div class="top__image">
       <img src="/assets/images/woman/top.jpg" alt="Image">
     </div>
   </div>
 </section>
 <section class="filter">
+  <form [formGroup]="filterForm" (ngSubmit)="onSubmit()">
   <div class="container">
     <details class="filter__main">
       <summary class="main__title filter__title arrow__main">Filter by</summary>
       <div class="settings">
         <details class="filter__price">
           <summary class="filter__title arrow__price">Price</summary>
-          <label for="price">Up to $ {{currentPrice}}</label>
-          <input (input)="setValue(price.value,'price')" type="range" min="0" max="200" [value]="currentPrice" #price>
+          <label for="price">Up to $ {{price.value}}</label>
+          <input formControlName="price"  (input)="price.value" value="0" type="range" min="0" max="200" #price>
         </details>
         <details class="filter__color">
           <summary class="filter__title arrow__color">Color</summary>
-          <input (input)="setValue(color1.value, 'color')" type="radio" name="color" value="light-blue" id="light-blue"
-            #color1>
+          <input formControlName="colors_light_blue" type="checkbox" name="color" value="light-blue" id="light-blue">
           <label for="light-blue"></label>
-          <input (input)="setValue(color2.value, 'color')" type="radio" name="color" value="blue" id="blue" #color2>
+          <input formControlName="colors_blue" type="checkbox" name="color" value="blue" id="blue">
           <label for="blue"></label>
-          <input (input)="setValue(color3.value, 'color')" type="radio" name="color" value="gray" id="gray" #color3>
+          <input formControlName="colors_gray" type="checkbox" name="color" value="gray" id="gray">
           <label for="gray"></label>
-          <input (input)="setValue(color4.value, 'color')" type="radio" name="color" value="black" id="black" #color4>
+          <input formControlName="colors_black" type="checkbox" name="color" value="black" id="black">
           <label for="black"></label>
-          <input (input)="setValue(color5.value, 'color')" type="radio" name="color" value="light-gray" id="light-gray"
-            #color5>
+          <input formControlName="colors_light_gray" type="checkbox" name="color" value="light-gray" id="light-gray">
           <label for="light-gray"></label>
-          <input (input)="setValue(color6.value, 'color')" type="radio" name="color" value="aquamarine" id="aquamarine"
-            #color6>
+          <input formControlName="colors_aquamarine" type="checkbox" name="color" value="aquamarine" id="aquamarine">
           <label for="aquamarine"></label>
         </details>
         <details class="filter__collec">
           <summary class="filter__title arrow__collec">Collection</summary>
-          <input (input)="setValue(collec1.value, 'collection')" type="radio" name="collection" value="Casual"
-            id="Casual" #collec1>
+          <input formControlName="collec_casual" type="checkbox" name="collection" value="Casual" id="Casual">
           <label for="Casual">Casual</label>
-          <input (input)="setValue(collec2.value, 'collection')" type="radio" name="collection" value="Petite"
-            id="Petite" #collec2>
+          <input formControlName="collec_petite" type="checkbox" name="collection" value="Petite" id="Petite">
           <label for="Petite">Petite</label><br>
-          <input (input)="setValue(collec3.value, 'collection')" type="radio" name="collection" value="Classic"
-            id="Classic" #collec3>
+          <input formControlName="collec_classic" type="checkbox" name="collection" value="Classic" id="Classic">
           <label for="Classic">Classic</label>
-          <input (input)="setValue(collec4.value, 'collection')" type="radio" name="collection" value="Soulluxe"
-            id="Soulluxe" #collec4>
+          <input formControlName="collec_soulluxe" type="checkbox" name="collection" value="Soulluxe" id="Soulluxe">
           <label for="Soulluxe">Soulluxe</label>
         </details>
-        <div class="filter__apply filter__title">Apply (products)</div>
-        <button (click)="clear()" class="filter__clear filter__title">Clear all</button>
+        <div class="filter__apply filter__title">
+          <button type="submit">
+            Apply (products)
+          </button>
+        </div>
+        <div (click)="clear()" class="filter__clear filter__title">Clear all</div>
       </div>
     </details>
   </div>
+  </form>
 </section>
-<section class="goods">
-  <div class="container">
-    <a *ngFor="let product of products; index as i" [routerLink]="['/products/productdetails', product.id]"
-      class="goods__item">
-      <img src="{{product.images[0]}}" alt="{{product.name}}">
-      <div class="goods__name">{{product.category}}</div>
-      <div class="goods__price">{{product.price}}$</div>
-    </a>
-  </div>
-</section>
+<div *ngIf="products.length==0" class="products-is-empty">No products found with these parameters...</div>
+<app-product-template  [products]="products" [widthImg]="243" [heightImg]="270" [gap66]="true"></app-product-template>
+
 

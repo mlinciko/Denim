@@ -28,8 +28,7 @@
   margin-top:30px;
 }
 .main__button:hover{
-  background-color: #fff;
-  color:#151C22;
+  background-color: #88bdd1;
 }
 .main__image{
   position:relative;
@@ -68,45 +67,9 @@
 }
 .best__title{
   font:700 32px/37px 'Work Sans',sans-serif;
-  padding-bottom:70px;
-}
-.view-all{
-  font:500 18px/21px 'Work Sans',sans-serif;
-  text-decoration: underline;
-  cursor:pointer;
-}
-.view-all:hover{
-  opacity:0.6;
-}
-.best .goods{
-  display:flex;
-  justify-content: space-between;
-}
-.best .goods__item{
-  display:block;
-  cursor:pointer;
-  color:#000;
-}
-.best .goods__item:hover{
-  opacity: 0.7;
-}
-.best .goods img{
-  width: 270px;
-  height: 343px;
-  object-fit:cover;
-}
-.best .goods__title{
-  font:500 18px/21px 'Work Sans',sans-serif;
-  padding-top:25px;
-}
-.best .goods__price{
-  font:700 16px/18px 'Work Sans',sans-serif;
-  padding-top:5px;
+  padding-bottom:30px;
 }
 
-.fall{
-  padding-top:130px;
-}
 .fall .container{
   display:flex;
   align-items: center;
@@ -148,8 +111,7 @@
   cursor:pointer;
 }
 .info__button:hover{
-  background-color: #fff;
-  color:#151C22;
+  background-color: #88bdd1;
 }
 
 .category{
@@ -180,9 +142,6 @@
   display:block;
   cursor:pointer;
   color:#000;
-}
-.category .goods__item:hover{
-  opacity:0.7;
 }
 .category .goods__name{
   font:500 18px/21px 'Work Sans', sans-serif;

@@ -185,7 +185,7 @@ input[type=radio]{
 
 
 .others{
-  margin:122.3px 0 126px 0;
+  margin:122.3px 0 40px 0;
 }
 .others__text{
   display:flex;
@@ -212,30 +212,4 @@ input[type=radio]{
 .others__view-all a{
   color:#151C22;
 }
-.goods{
-  display:flex;
-  gap:30px;
-  margin-top:62px;
-}
-.goods a{
-  color:#151C22;
-  cursor:pointer;
-}
-.goods a:hover{
-  opacity:0.7;
-}
-.goods__image{
-  width: 270px;
-  height: 348px;
-  object-fit:cover;
-}
-.goods__name{
-  font:500 18px/21.11px 'Work Sans', sans-serif;
-  padding-top:23px;
-}
-.goods__price{
-  font:700 16px/18.77px 'Work Sans', sans-serif;
-  padding-top:6px;
-}
-
 

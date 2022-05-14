@@ -1,0 +1,56 @@
+<section class="checkout-dialog">
+  <a class="close__button" (click)="close()"></a>
+  <form  novalidate [formGroup]="personalDataForm" (ngSubmit)="onSubmit()">
+    <input formControlName="firstName" placeholder="First Name" type="text" name="first-name" id="first-name" required>
+    <div *ngIf="personalDataForm.get('firstName')?.touched && personalDataForm.get('firstName')?.invalid" class="message__container">
+      <div *ngIf="personalDataForm.get('firstName')?.errors?.['required']" class="message">
+        First Name is required
+      </div>
+    </div>
+    <input formControlName="lastName" placeholder="Last Name" type="text" name="last-name" id="last-name" required>
+    <div *ngIf="personalDataForm.get('lastName')?.touched && personalDataForm.get('lastName')?.invalid" class="message__container">
+      <div *ngIf="personalDataForm.get('lastName')?.errors?.['required']" class="message">
+        Last Name is required
+      </div>
+    </div>
+    <input formControlName="email" placeholder="E-mail" type="email" name="email" id="email" required>
+    <div *ngIf="personalDataForm.get('email')?.touched && personalDataForm.get('email')?.invalid" class="message__container">
+      <div *ngIf="personalDataForm.get('email')?.errors?.['required']" class="message">
+        E-mail is required
+      </div>
+      <div *ngIf="personalDataForm.get('email')?.errors?.['email']" class="message">
+        Invalid e-mail
+      </div>
+    </div>
+    <input formControlName="tel" placeholder="Telephone number" type="tel" name="tel" id="tel" required>
+    <div *ngIf="personalDataForm.get('tel')?.touched && personalDataForm.get('tel')?.invalid" class="message__container">
+      <div *ngIf="personalDataForm.get('tel')?.errors?.['required']" class="message">
+        Telephone number is required
+      </div>
+      <div *ngIf="personalDataForm.get('tel')?.errors?.['pattern']" class="message">
+        Invalid phone number
+      </div>
+    </div>
+    <input formControlName="address" placeholder="Address" type="text" name="address" id="address" autocomplete="off" required>
+    <div *ngIf="personalDataForm.get('address')?.touched && personalDataForm.get('address')?.invalid" class="message__container">
+      <div *ngIf="personalDataForm.get('address')?.errors?.['required']" class="message">
+        Address is required
+      </div>
+    </div>
+    <p class="radio__title">Select a Payment Method:</p>
+    <div class="radio__container">
+    <input formControlName="paymentMethod" type="radio" name="payment-method" value="online" id="online">
+    <label for="online">online</label>
+    </div>
+    <div class="radio__container">
+    <input formControlName="paymentMethod" type="radio" name="payment-method" value="uponReceipt" id="uponReceipt">
+    <label for="uponReceipt">upon receipt</label>
+    </div>
+    <div *ngIf="personalDataForm.get('paymentMethod')?.touched && personalDataForm.get('paymentMethod')?.invalid" class="message__container">
+      <div *ngIf="personalDataForm.get('paymentMethod')?.errors?.['required']" class="message">
+        Payment method is required
+      </div>
+    </div>
+    <button [class.disabled]="personalDataForm.invalid" [disabled]="personalDataForm.invalid" type="submit">Confirm</button>
+  </form>
+</section>

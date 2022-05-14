@@ -1,0 +1,32 @@
+.dialog-title{
+  font-size:18px;
+}
+.dialog-container{
+  padding:20px;
+}
+.contacts-info .item{
+  display:flex;
+  font-size: 16px;
+  margin:10px auto;
+}
+i{
+  float:right;
+}
+.item a{
+  color:#000;
+  margin-left:10px;
+}
+
+.close__button{
+  position: relative;
+  display:block;
+}
+.close__button::before{
+  position: absolute;
+  right: -21px;
+  top:-27px;
+  content: '\f00d';
+  font-family: 'Font Awesome 5 Free', 'Font Awesome 5 Brands';
+  font-weight: 900;
+  cursor: pointer;
+}

@@ -1,0 +1,26 @@
+<section class="user">
+  <div class="container">
+    <a href="" class="log-out">Log out</a>
+    <div class="personal-data">
+      <div class="image">
+        <img src="" alt="">
+      </div>
+      <div class="data personal-data__item">
+        <div class="data__first-name">First Name: <span>Maria</span></div>
+        <div class="data__second-name">Second Name: <span>Ovcharenko</span></div>
+        <div class="data__email">Email: <span>example@emai.ru</span></div>
+        <div class="data__number">Number: <span>+7 (978) 810 32 16</span></div>
+        <div class="data__address">Address: <span>Moscow, Russia</span></div>
+        <a class="data__change">change</a>
+      </div>
+      <div class="info personal-data__item">
+        <div routerLink="/cart" class="info__bag info__item">CART</div>
+        <div routerLink="orders" class="info__orders info__item">ORDERS</div>
+        <div (click)="onPromoClick()" class="info__cards info__item">PROMO CODES</div>
+        <div (click)="onContactsClick()" class="info__contact-us info__item">CONTACTS US</div>
+      </div>
+    </div>
+  </div>
+</section>
+<app-product-template [products]="products" [widthImg]="270" [heightImg]="343" [gap30]="true"></app-product-template>
+<router-outlet></router-outlet>

@@ -1,0 +1,22 @@
+<section class="goods">
+  <div class="container" [class.gap30]="gap30" [class.gap66]="gap66">
+  <a *ngFor="let product of products" [routerLink]="['/products/productdetails', product.id]" class="goods__item">
+    <img 
+      class="goods__image" 
+      src="{{product.image[0]}}" 
+      alt="{{product.name}}"
+      (mouseenter)="hoveredImg.src = product.image[1]" 
+      (mouseleave)="hoveredImg.src = product.image[0]" 
+      width="{{widthImg}}"
+      height="{{heightImg}}"
+      #hoveredImg>
+    <div class="goods__name">{{product.name}}</div>
+    <div class="goods__price">&#36; {{product.price}}</div>
+  </a>
+  <!-- <div *ngFor="let product of products" >
+    <p>{{product.name}}</p>
+  </div> -->
+  
+</div>
+</section>
+

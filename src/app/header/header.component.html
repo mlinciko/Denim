@@ -1,8 +1,8 @@
 <header class="header">
   <div class="container header__container">
     <ul class="menu header__menu">
-      <li routerLinkActive="active" class="menu__item">
-        <a routerLink="/home">Home</a>
+      <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="menu__item">
+        <a routerLink="/">Home</a>
       </li>
       <li routerLinkActive="active" class="menu__item">
         <a [routerLink]="['/products', 'female']">Woman</a>
@@ -10,13 +10,44 @@
       <li routerLinkActive="active" class="menu__item">
         <a [routerLink]="['/products', 'male']">Man</a>
       </li>
-      <li class="menu__item">
-        <a >New</a>
+      <li routerLinkActive="active" class="menu__item">
+        <a routerLink="/new">New</a>
       </li>
     </ul>
     <a routerLink="/" class="title header__title">Nîmes</a>
-    <a class="search" href="#"> </a>
-    <a class="basket" href="#"></a>
+    
+    <div class="search__container" [class.show]="showInput">
+      <input placeholder="Search" class="search__input" type="text" (keyup)="changeResultVisibility($event)">
+      <button type="reset" class="close__search" (click)="closeSearch()"></button>
+      <div class="search__result" [class.show]="showResult">
+        <div class="search__result-title">
+          Searching results:
+        </div>
+        <div *ngIf="products.length==0" class="nothingFound">Nothing found...</div>
+        <div class="header__goods">
+          <div *ngFor="let product of products" class="header__goods__container" (click)="closeSearch()">
+            <a href="" class="header__goods__link" [routerLink]="['/products/productdetails', product.id]" >
+              <img src="{{product.image[0]}}" alt="{{product.name}}" class="header__goods__image">
+              <div class="header__goods__text">
+                <div class="header__goods__name">{{product.name}}</div>
+                <div class="header__goods__price">&#36; {{product.price}}</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header__toolbar">
+      <a class="search" (click)="changeInputVisibility()"></a>
+      <a class="basket" routerLink="/cart" routerLinkActive="active-basket"></a>
+      <div routerLinkActive="active" class="account">
+        <a routerLink="/account">Account</a>
+      </div>
+    </div>
+    <!-- <a routerLinkActive="active" class="login">
+      <div routerLink="/account">Log in</div>
+    </a> -->
   </div>
 </header>
-
+ 
+<!-- [routerLink]="['/products/productdetails', product.id]" class="header__goods__container" -->

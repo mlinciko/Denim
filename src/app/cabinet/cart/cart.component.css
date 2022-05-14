@@ -1,0 +1,90 @@
+/*GOODS*/
+section.cart {
+  padding-top: 74px;
+  padding-bottom: 74px;
+}
+
+section.cart .container {
+  max-width: 500px;
+}
+
+.cart__title {
+  font-size: 25px;
+  font-weight: 600;
+  padding: 40px 40px 40px 0;
+}
+
+.goods__container {
+  position: relative;
+  display: flex;
+  box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);
+  width: 500px;
+  margin-bottom: 20px;
+}
+
+a.goods__delete::after {
+  position: absolute;
+  display: block;
+  right: 29px;
+  top: 26px;
+  color: #000;
+  content: '\f00d';
+  font-family: 'Font Awesome 5 Free',
+    'Font Awesome 5 Brands';
+  font-weight: 600;
+  font-size: 21px;
+  cursor: pointer;
+}
+
+.goods__image {
+  display: block;
+  object-fit: cover;
+  width: 70px;
+  height: 70px;
+}
+
+.goods__text {
+  padding: 0 0 0 20px;
+}
+
+.goods__name {
+  font: 500 14px/21px 'Work Sans', sans-serif;
+  padding: 10px 0 5px 0;
+}
+
+.goods__price {
+  font: 700 16px/18px 'Work Sans', sans-serif;
+}
+
+button.cart__checkout {
+  height: 30px;
+  font: 500 16px/18.8px 'Work Sans', sans-serif;
+  line-height: 30px;
+  color: #fff;
+  background-color: #151C22;
+  border-radius: 4px;
+  padding: 0 10px;
+}
+
+button.cart__checkout:hover {
+  background-color: #88bdd1;
+  cursor: pointer;
+}
+
+.cart__summ {
+  font-size: 20px;
+  padding: 10px 0;
+}
+
+
+.alert {
+  color: red;
+  margin: 10px 0 0 85px;
+  font-size: 13px;
+}
+
+.message {
+  color: red;
+  margin: 10px 0;
+  font-size: 13px;
+}
